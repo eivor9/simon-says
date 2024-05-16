@@ -12,13 +12,13 @@ const colors = [
     {dark: "rgba(255, 0, 255, 0.5)", light: "rgba(255, 0, 255, 1)"}
 ]
 
-for (let i = 0; i < circularTiles.length; i++){
-    circularTiles[i].addEventListener("mousedown", (e) => e.target.style.background = colors[i].light);
-    circularTiles[i].addEventListener("touchstart", (e) => e.target.style.background = colors[i].light);
-    circularTiles[i].addEventListener("mouseup", (e) => e.target.style.background = colors[i].dark);
-    circularTiles[i].addEventListener("touchend", (e) => e.target.style.background = colors[i].dark);
-    circularTiles[i].addEventListener("dblclick", (e) => e.preventDefault());
-}
+// for (let i = 0; i < circularTiles.length; i++){
+//     circularTiles[i].addEventListener("mousedown", (e) => e.target.style.background = colors[i].light);
+//     circularTiles[i].addEventListener("touchstart", (e) => e.target.style.background = colors[i].light);
+//     circularTiles[i].addEventListener("mouseup", (e) => e.target.style.background = colors[i].dark);
+//     circularTiles[i].addEventListener("touchend", (e) => e.target.style.background = colors[i].dark);
+//     circularTiles[i].addEventListener("dblclick", (e) => e.preventDefault());
+// }
 
 class Sequence {
     constructor (tile, index){
@@ -46,6 +46,9 @@ function checkAnswer(){
 }
 
 function addButton(e){
+    let temp = e.target.style.backgroundColor;
+    e.target.style.background = "white";
+    setTimeout(() => e.target.style.background = temp, 64);
     buttonSequence.push(e.target);
     if (buttonSequence.length === simonSequence.length){
         if(checkAnswer()){
