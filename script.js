@@ -29,17 +29,29 @@ for(let i = 1; i <= circularTiles.length; i++){
 }
 
 function game(){
-    for (let i = 1; i <= level; i++){
-        const [currentTile, currentIndex] = randomTile();
-        currentTile.style.backgroundColor = colors[currentIndex].light;
-        setTimeout(() => currentTile.style.backgroundColor = colors[currentIndex].dark, i*500);
-        simonSequence.push( new Sequence(currentTile, currentIndex) );
-    }
-    level++;
+    console.log(simonSequence);
+    let counter = 0;
+    let gameRunning = setInterval(() => {
+        if (counter === level - 1){
+            let [currentTile, currentIndex] = randomTile();
+            flashTile(currentTile, currentIndex);
+            simonSequence.push(new Sequence(currentTile, currentIndex));
+            level++;
+            clearInterval(gameRunning);
+        } 
+        else{
+            let currentSequence = simonSequence[counter];
+            flashTile(currentSequence.tile, currentSequence.index);
+            counter++;
+        }
+    }, 500);
 }
 
 
-
+function flashTile(tile, index){
+    tile.style.backgroundColor = colors[index].light;
+    setTimeout(() => tile.style.backgroundColor = colors[index].dark, 500);
+}
 
 function randomTile(){
     let randomIndex = Math.floor(Math.random() * circularTiles.length);
