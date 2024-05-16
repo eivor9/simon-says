@@ -2,14 +2,32 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid black;
+    font-family: sans-serif;
 }
 body{
     background-color: black;
 }
+.button-container{
+    margin: auto;
+    height: calc((100vh * 4/16) - 10px);
+    aspect-ratio: 9 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+button{
+    display: block;
+    border: none;
+    font-size: 10rem;
+    border-radius: 200px;
+    height: 90%;
+    width: 90%;
+    padding: 20px;
+}
 .container{
-    height: 100vh;
-    aspect-ratio: 9 / 16;
+    height: calc(100vh * (12/16));
+    aspect-ratio: 9 / 12;
     margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -17,25 +35,18 @@ body{
     justify-items: center;
 }
 .tile{
-    width: 80%;
+    height: 95%;
     aspect-ratio: 1;
     border-radius: 50%;
 }
-.one{
-    background-color: rgba(255, 0, 0, 0.5);
+h1{
+    color: white;
+    position: absolute;
+    top: -3rem;
+    font-size: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
 }
-.two{
-    background-color: rgba(255, 128, 0, 0.5);
-}
-.three{
-    background-color: rgba(255, 0, 255, 0.5);
-}
-.four{
-    background-color: rgba(255, 255, 0, 0.5);
-}
-.five{
-    background-color: rgba(0, 0, 255, 0.5);
-}
-.six{
-    background-color: rgba(0, 255, 0, 0.5);
+.tile:focus{
+    box-shadow: inset 0 0 white;
 }
