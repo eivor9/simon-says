@@ -36,8 +36,6 @@ for(let i = 0; i < circularTiles.length; i++){
     circularTiles[i].style.backgroundColor = colors[i].light;
 }
 
-addClickListeners();
-
 function checkAnswer(){
     removeClickListeners();
     for(let i = 0; i < simonSequence.length; i++){
@@ -79,7 +77,6 @@ function game(){
     else{
         mainLoop();
     }
-    addClickListeners();
 }
 
 function flashTile(tile, index){
@@ -100,6 +97,7 @@ function mainLoop(){
             flashTile(currentTile, currentIndex);
             simonSequence.push(new Sequence(currentTile, currentIndex));
             setTimeout(disableButton, 1000);
+            setTimeout(addClickListeners, 1000);
             clearInterval(gameRunning);
         } 
         else{
@@ -129,12 +127,10 @@ function continueGame(){
 function addClickListeners(){
     for(let i = 0; i < circularTiles.length; i++){
         circularTiles[i].addEventListener("click", addButton);
-        circularTiles[i].addEventListener("touchstart", addButton);
     }
 }
 function removeClickListeners(){
     for(let i = 0; i < circularTiles.length; i++){
         circularTiles[i].removeEventListener("click", addButton);
-        circularTiles[i].removeEventListener("touchstart", addButton);
     }
 }
