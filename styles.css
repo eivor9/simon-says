@@ -19,11 +19,13 @@ body{
 button{
     display: block;
     border: none;
-    font-size: 10rem;
+    font-size: 10vh;
     border-radius: 200px;
     height: 90%;
     width: 90%;
     padding: 20px;
+    background: linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0.5));
+    color: black;
 }
 .container{
     height: calc(100vh * (12/16));
@@ -42,8 +44,8 @@ button{
 h1{
     color: white;
     position: absolute;
-    top: -3rem;
-    font-size: 3rem;
+    top: -4vh;
+    font-size: 4vh;
     left: 50%;
     transform: translateX(-50%);
 }

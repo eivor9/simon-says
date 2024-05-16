@@ -14,7 +14,9 @@ const colors = [
 
 for (let i = 0; i < circularTiles.length; i++){
     circularTiles[i].addEventListener("mousedown", (e) => e.target.style.background = colors[i].light);
+    circularTiles[i].addEventListener("touchstart", (e) => e.target.style.background = colors[i].light);
     circularTiles[i].addEventListener("mouseup", (e) => e.target.style.background = colors[i].dark);
+    circularTiles[i].addEventListener("touchend", (e) => e.target.style.background = colors[i].dark);
 }
 
 class Sequence {
@@ -108,7 +110,7 @@ function mainLoop(){
 }
 
 function disableButton(){
-    button.style.fontSize = "5rem";
+    button.style.fontSize = "8vh";
     button.innerText = "Your turn...";
     button.removeEventListener("click", game);
     
