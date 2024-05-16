@@ -4,15 +4,38 @@
     box-sizing: border-box;
     border: 1px solid black;
 }
+body{
+    background-color: black;
+}
 .container{
     height: 100vh;
     aspect-ratio: 9 / 16;
     margin: auto;
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
 }
-.hole:active{
-    background-color: grey;
+.tile{
+    width: 80%;
+    aspect-ratio: 1;
+    border-radius: 50%;
 }
-.hole{
+.one{
+    background-color: rgba(255, 0, 0, 0.5);
+}
+.two{
+    background-color: rgba(255, 128, 0, 0.5);
+}
+.three{
+    background-color: rgba(255, 0, 255, 0.5);
+}
+.four{
+    background-color: rgba(255, 255, 0, 0.5);
+}
+.five{
+    background-color: rgba(0, 0, 255, 0.5);
+}
+.six{
+    background-color: rgba(0, 255, 0, 0.5);
 }
