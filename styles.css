@@ -26,6 +26,7 @@ button{
     padding: 20px;
     background: linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0.5));
     color: black;
+    margin: auto;
 }
 .container{
     height: calc(100vh * (12/16));

@@ -17,6 +17,7 @@ for (let i = 0; i < circularTiles.length; i++){
     circularTiles[i].addEventListener("touchstart", (e) => e.target.style.background = colors[i].light);
     circularTiles[i].addEventListener("mouseup", (e) => e.target.style.background = colors[i].dark);
     circularTiles[i].addEventListener("touchend", (e) => e.target.style.background = colors[i].dark);
+    circularTiles[i].addEventListener("dblclick", (e) => e.preventDefault());
 }
 
 class Sequence {
@@ -128,10 +129,12 @@ function continueGame(){
 function addClickListeners(){
     for(let i = 0; i < circularTiles.length; i++){
         circularTiles[i].addEventListener("click", addButton);
+        circularTiles[i].addEventListener("touchstart", addButton);
     }
 }
 function removeClickListeners(){
     for(let i = 0; i < circularTiles.length; i++){
         circularTiles[i].removeEventListener("click", addButton);
+        circularTiles[i].removeEventListener("touchstart", addButton);
     }
 }
