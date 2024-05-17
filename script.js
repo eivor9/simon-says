@@ -121,7 +121,7 @@ function disableButton(){
 function continueGame(){
     button.style.background = "linear-gradient(rgba(0, 255, 0, 1), rgba(0, 255, 0, 0.5))";
     button.style.color = "white";
-    button.innerHTML = "Nice!";
+    button.innerHTML = "Continue";
     button.addEventListener("click", game);
     buttonSequence = [];
     level++;
